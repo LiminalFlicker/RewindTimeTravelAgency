@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(197, 125, 233);
+  background-image: url(beautiful-milky-way-night-sky.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.gallery {
+  font-family: Arial, sans-serif;
+  text-align: left;
+}
+
+.gallery-container {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr; /*repeat(3, 1.5fr);*/
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-area: galleryContainer;
+}
+
+.gallery-item img {
+  object-fit: cover;
+  width: 80%;
+  height: 100%;
+  border-radius: 5%;
+  border: solid black 2.5px;
+  opacity: 0.9;
+}
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for smaller screens */
+  }
+}
+
+.layoutContainer {
+  font-family: sans-serif;
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "secServices secServices"
+    "secTTGallery secTTGallery"
+    ". footer";
+  grid-template-columns: 1fr 4fr;
+  gap: 10px;
+}
+
+.header {
+  grid-area: header;
+}
+
+.header h1 {
+  text-align: center;
+  margin: 1rem;
+  letter-spacing: 2px;
+  font-weight: 300;
+  text-shadow: 6px 4px 10px white;
+  display: grid;
+  font-weight: 500;
+}
+
+.header h2 {
+  text-align: center;
+  text-shadow: 6px 4px 10px black;
+  color: ghostwhite;
+  width: 100;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: cadetblue;
+  border-radius: 10px;
+}
+
+.section_Services {
+  grid-area: secServices;
+}
+
+.section_Services h2 {
+  text-align: center;
+  text-shadow: 6px 4px 10px white;
+}
+
+.section_Services h3 {
+  text-align: left;
+  background-color: #0072e1;
+  opacity: 0.75;
+}
+
+.servicesContainer {
+  display: flex;
+  margin: 10px;
+  gap: 20px;
+  flex-direction: column;
+}
+
+.servicesContainer p {
+  /* border: solid darkviolet 0px; */
+  background-color: #0072e1;
+  opacity: 0.75;
+  border-radius: 10px;
+  max-width: 30rem;
+  letter-spacing: 2px;
+  color: bisque;
+  initial-letter: normal;
+  padding: 10px;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.section_TimeTravelGallery {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  grid-area: secTTGallery;
+  text-align: center;
+  text-shadow: 6px 4px 10px white;
+}
+
+.section_TimeTravelGallery h2 {
+  text-align: center;
+  text-shadow: 6px 4px 10px white;
+}
